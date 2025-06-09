@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>OdinFun❤️Gobs</title><link rel="icon" type="image/png" href="./favicon.png"/><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css"><script defer="defer" src="./bundle.min.js"></script></head><body><div id="app"><div class="top-bar"><div class="title">OdinFun❤️Gobs</div></div><div id="game-container"></div></div><script>function adjustTitle() {
+            const titleElement = document.querySelector('.title');
+        }
+
+        function calculateTopBarPosition() {
+            const topBar = document.querySelector('.top-bar');
+            if (!topBar) {
+                console.warn('Top bar element not found');
+                return;
+            }
+            const topBarHeight = topBar.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const bottomPositionPercentage = (topBarHeight / viewportHeight) * 100;
+
+            window.topBarBottomPosition = bottomPositionPercentage * window.innerHeight / 100;
+        }
+
+        // Run on initial load and window resize
+        window.addEventListener('load', () => {
+            adjustTitle();
+            calculateTopBarPosition();
+        });
+        window.addEventListener('resize', () => {
+            adjustTitle();
+            calculateTopBarPosition();
+        });
+        function updateFunction() {
+
+            calculateTopBarPosition();
+            // Any additional logic you need to run
+        }
+
+        // Set up the interval to run the function every 5 milliseconds
+        const intervalId = setInterval(updateFunction, 5);</script></body></html>
