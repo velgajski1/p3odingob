@@ -77,6 +77,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
+                { from: 'public/assets', to: 'assets' },
                 { from: 'public/style.css', to: 'style.css' }
             ],
         }),

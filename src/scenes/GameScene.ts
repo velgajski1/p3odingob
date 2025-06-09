@@ -25,9 +25,9 @@ export default class GameScene extends Phaser.Scene
 
   preload()
   {
-    this.load.image('odin', 'odin.png');
-    this.load.image('cloud', 'cloud.png');
-    this.load.image('mountain', 'mountain.png');
+    this.load.image('odin', 'assets/odin.png');
+    this.load.image('cloud', 'assets/cloud.png');
+    this.load.image('mountain', 'assets/mountain.png');
   }
 
   create()
